@@ -15,6 +15,18 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = [
     "README.md"
   ]
+  s.files = [
+    "README.md",
+    "Rakefile",
+    "VERSION",
+    "ilinkmaker.gemspec",
+    "lib/ilinkmaker.rb",
+    "lib/ilinkmaker/client.rb",
+    "pkg/ilinkmaker-0.0.0.gem",
+    "test/fixtures/search.json",
+    "test/ilinkmaker_test.rb",
+    "test/test_helper.rb"
+  ]
   s.homepage = %q{http://github.com/phuphighter/ilinkmaker}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}

@@ -23,6 +23,8 @@ Gem::Specification.new do |s|
     "lib/ilinkmaker.rb",
     "lib/ilinkmaker/client.rb",
     "pkg/ilinkmaker-0.0.0.gem",
+    "test/fixtures/entity_lookup.json",
+    "test/fixtures/lookup.json",
     "test/fixtures/search.json",
     "test/ilinkmaker_test.rb",
     "test/test_helper.rb"

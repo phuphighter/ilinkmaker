@@ -2,7 +2,7 @@ module Ilinkmaker
   
   class Client
     include HTTParty
-    base_uri "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch"
+    base_uri "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa"
     format :json
         
     attr_reader :partner_id, :linkshare_url
@@ -13,7 +13,11 @@ module Ilinkmaker
     end
 
     def search(options={})
-      response = self.class.get("/", :query => options.merge(self.default_options))
+      response = self.class.get("/wsSearch", :query => options.merge(self.default_options))
+    end
+    
+    def lookup(options={})
+      response = self.class.get("/wsLookup", :query => options.merge(self.default_options))
     end
     
     def get_affiliate_link(result, options={})

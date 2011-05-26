@@ -1,0 +1,6 @@
+{
+ "resultCount":2,
+ "results": [
+{"wrapperType":"artist", "artistType":"Artist", "artistName":"Jack Johnson", "artistLinkUrl":"http://itunes.apple.com/us/artist/jack-johnson/id909253?uo=4", "artistId":909253, "amgArtistId":468749, "amgVideoArtistId":null, "primaryGenreName":"Rock", "primaryGenreId":21}, 
+{"wrapperType":"artist", "artistType":"Artist", "artistName":"U2", "artistLinkUrl":"http://itunes.apple.com/us/artist/u2/id78500?uo=4", "artistId":78500, "amgArtistId":5723, "amgVideoArtistId":null, "primaryGenreName":"Rock", "primaryGenreId":21}]
+}

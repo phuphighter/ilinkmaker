@@ -1,0 +1,5 @@
+{
+ "resultCount":1,
+ "results": [
+{"kind":"ebook", "artistId":2072165, "artistName":"Seth Godin", "price":16.99, "description":null, "genreIds":["10014"], "releaseDate":"2008-10-16T07:00:00Z", "currency":"USD", "trackId":361926215, "trackName":"Tribes", "genres":["Management & Leadership"], "artistIds":[2072165], "artworkUrl60":"http://a4.mzstatic.com/us/r30/Features/d9/12/ad/dj.cbleznyd.60x60-50.jpg", "artworkUrl100":"http://a4.mzstatic.com/us/r30/Features/d9/12/ad/dj.cbleznyd.100x100-75.jpg", "artistViewUrl":"http://itunes.apple.com/us/artist/seth-godin/id2072165?mt=11&uo=4", "trackCensoredName":"Tribes", "trackViewUrl":"http://itunes.apple.com/us/book/tribes/id361926215?mt=11&uo=4", "averageUserRating":4.5, "userRatingCount":35}]
+}

@@ -33,6 +33,25 @@ class IlinkmakerTest < Test::Unit::TestCase
         @client.get_affiliate_link(search_result["results"].first, {:partner_id => "wtf", :linkshare_url => "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1"}).should == "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1=http://itunes.apple.com/us/book/tribes/id361926215?mt=11&uo=4?partner_id=wtf"
       end
     end
+    
+    context "lookup by identifier" do
+      setup do
+        @client = Ilinkmaker::Client.new
+      end
+      
+      should "find a specific identifier" do
+        stub_get("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsLookup?id=361926215", "lookup.json")
+        result = @client.lookup(:id => '361926215')
+        result["results"].first["trackViewUrl"].should == "http://itunes.apple.com/us/book/tribes/id361926215?mt=11&uo=4"
+        @client.get_affiliate_link(result["results"].first, {:partner_id => "wtf", :linkshare_url => "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1"}).should == "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1=http://itunes.apple.com/us/book/tribes/id361926215?mt=11&uo=4?partner_id=wtf"
+      end
+      
+      should "find by id and get entity" do
+        stub_get("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsLookup?id=909253&entity=album", "entity_lookup.json")
+        result = @client.lookup(:id => '909253', :entity => "album")
+        result["results"].first["artistName"].should == "Jack Johnson"
+      end
+    end
   end
   
 end

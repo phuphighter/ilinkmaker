@@ -30,7 +30,7 @@ class IlinkmakerTest < Test::Unit::TestCase
         
         stub_get("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?term=tribes&media=ebook", "search.json")
         search_result = @client.search(:term => "tribes", :media => "ebook", :limit => 25)
-        @client.get_affiliate_link(search_result["results"].first, {:partner_id => "wtf", :linkshare_url => "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1="}).should == "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1=http://itunes.apple.com/us/book/tribes/id361926215?mt=11&uo=4?partner_id=wtf"
+        @client.get_affiliate_link(search_result["results"].first, {:partner_id => "wtf", :linkshare_url => "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1="}).should == "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1=http://itunes.apple.com/us/book/tribes/id361926215?mt=11&uo=4?partnerId=wtf"
       end
     end
     
@@ -43,7 +43,7 @@ class IlinkmakerTest < Test::Unit::TestCase
         stub_get("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsLookup?id=361926215", "lookup.json")
         result = @client.lookup(:id => '361926215')
         result["results"].first["trackViewUrl"].should == "http://itunes.apple.com/us/book/tribes/id361926215?mt=11&uo=4"
-        @client.get_affiliate_link(result["results"].first, {:partner_id => "wtf", :linkshare_url => "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1="}).should == "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1=http://itunes.apple.com/us/book/tribes/id361926215?mt=11&uo=4?partner_id=wtf"
+        @client.get_affiliate_link(result["results"].first, {:partner_id => "wtf", :linkshare_url => "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1="}).should == "http://click.linksynergy.com/fs-bin/stat?id=XXXXXXXX&offerid=XXXXX&type=X&subid=X&tmpid=XXXX&RD_PARM1=http://itunes.apple.com/us/book/tribes/id361926215?mt=11&uo=4?partnerId=wtf"
       end
       
       should "find by id and get entity" do

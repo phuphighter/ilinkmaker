@@ -24,7 +24,7 @@ module Ilinkmaker
       url = result["trackViewUrl"]
       
       if @partner_id && @linkshare_url        
-        url = "#{@linkshare_url}#{url}?partner_id=#{@partner_id}"
+        url = "#{@linkshare_url}#{url}?partnerId=#{@partner_id}"
       elsif options[:partner_id] && options[:linkshare_url]
         url = "#{options[:linkshare_url]}#{url}?partnerId=#{options[:partner_id]}"
       end
